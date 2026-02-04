@@ -185,3 +185,131 @@ from employee;
 select count(emp_id)
 from employee;
 
+
+
+-- 4 feb 2025 ---
+
+show databases;
+
+use employee_query;
+
+show tables;
+
+select * from employee;
+
+
+-- 4 find the employee from table where employee salary is grater than 40000 --
+
+select * from employee where emp_salary > 40000;
+
+-- 5 find the employee from table where employee salary is less than 50000 and from IT department --
+
+select * from employee where emp_salary < 50000 and dept_name = "IT";
+
+
+-- 6 find the employee from table who is belong to IT or Sales Department --
+
+select * from employee where dept_name = "IT" or dept_name = "Sales";
+
+--          OR We can Use         --
+
+select * from 
+employee where dept_name in ('IT','Sales');
+
+
+
+-- 7 finnd the employee who is not belong to IT department --
+
+
+select * from employee where dept_name not in ('IT');
+
+
+--             OR We Can Use          --
+
+select * from employee where dept_name != 'IT';
+
+
+--             OR We Can Use         ---
+
+select * from employee where not dept_name = "IT";
+
+
+
+
+-- 8 find the number of employees in each department here we will learn group by --
+
+select count(emp_id) as no_of_emp,dept_name,sum(emp_salary)
+from employee 
+group by (dept_name);
+
+
+-- 9 find the number of employees in each department and max salary in each dpet --
+
+select dept_name,max(emp_salary)
+from employee 
+group by (dept_name);
+
+-- 10 find the total salary in each department 
+
+select dept_name,sum(emp_salary)
+from employee 
+group by (dept_name);
+
+-- 11 find the top 3 rows from employee
+
+select * from employee limit 3 ;
+
+
+-- 12 sort the emp_salary in ASC order --
+
+select * from employee order by emp_salary ASC;
+
+
+-- 13 sort the emp_salary in DESC order --
+
+select * from employee order by emp_salary DESC;
+
+-- 14 find the details of employee who is getting max salary --
+
+select 
+emp_name, 
+emp_salary
+from employee
+order by emp_salary DESC
+limit 1;
+
+
+-- now we will learn the sub query -- corrcet solution of 14 question 
+
+select * from
+employee where emp_salary = (select max(emp_salary) from employee);
+
+
+
+-- 15 , 16 find the second highest salary form employee 
+
+select * from 
+employee where emp_salary 
+= (select max(emp_salary)
+from employee where emp_salary < (select max(emp_salary) from employee));
+
+
+-- 17 , 18 find the details of employee where at least more than 2 employee in each department --
+
+SELECT count(emp_id),dept_name
+    FROM employee
+    GROUP BY dept_name
+    HAVING COUNT(emp_id) > 2;
+
+SELECT *
+FROM employee
+WHERE dept_name IN (
+    SELECT dept_name
+    FROM employee
+    GROUP BY dept_name
+    HAVING COUNT(emp_id) > 2
+);
+
+
+
+
