@@ -310,6 +310,131 @@ WHERE dept_name IN (
     HAVING COUNT(emp_id) > 2
 );
 
+-- 5 feb 2026 --
 
+
+use employee_query;
+
+show tables;
+
+
+select * from employee;
+
+
+
+-- find the details of the employee who is getting salary more than avg salary --
+
+select avg(emp_salary) from employee;
+
+select * from employee where emp_salary > (select avg(emp_salary) from employee);
+
+
+-- find the details of the employee who's salary range is between 30k to 60k --
+
+select * from 
+employee where emp_salary between 30000 and 60000;
+
+
+-- find the details of employees working in same department as Ram --
+
+select dept_name from employee where emp_name = "Ram";
+
+select * from employee where dept_name = ( select dept_name from employee where emp_name = "Ram");
+
+
+-- find the dept name where avg salary > 40000 --
+
+
+select dept_name from employee group by dept_name having avg(emp_salary) > 40000;
+
+
+-- find department name where having total salary > 100000 --
+
+select dept_name,sum(emp_salary) from employee group by dept_name having sum(emp_salary) > 100000;
+
+
+-- pattern matching --
+-- find the details of employee who's name start with A --
+
+select *
+from employee
+where emp_name like "a%"; -- here a indicates start with a and % means all charchters after a
+
+select *
+from employee
+where emp_name like "z%";
+
+select * 
+from employee 
+where emp_name like "%a";
+
+
+-- find employee name start with r and have at least 3 charchter --
+
+select * 
+from employee
+where emp_name like "R___";
+
+
+-- find the department name start with H --
+
+select dept_name from employee where dept_name like "H%";
+
+
+-- find the emp name which have exactly 4 letters --
+
+select emp_name from employee where emp_name like "____";
+
+
+-- insert the data of emp --
+
+insert into employee values
+(113,"Nancy","IT",NULL),
+(114,"Abu","HR",NULL),
+(115,"Sharwan","Fianence",Null);
+
+-- find the em details who's salary is null --
+
+
+
+select * from employee where emp_salary IS NULL;
+
+
+
+select * from employee where emp_salary is not null;
+
+
+
+SET SQL_SAFE_UPDATES = 0;
+
+delete from employee where emp_salary is null;
+
+
+-- new database for leanr joints and fk and pk --
+
+create database join_fk_db;
+
+
+use join_fk_db;
+
+
+
+create table department 
+(dept_id int auto_increment primary key,
+dept_name varchar(30),
+dept_head varchar(50));
+
+
+
+create table employee 
+(emp_id varchar(10) primary key,
+emp_name varchar(30),
+emp_salary int,
+dept_id int ,
+foreign key (dept_id) references department(dept_id));  -- here this line is for connecting department and employee using dept_id --
+
+
+select * from department;
+insert into department (dept_name,dept_head) values ("HR","Santosh");
 
 
