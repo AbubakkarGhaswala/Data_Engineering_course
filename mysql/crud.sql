@@ -438,3 +438,105 @@ select * from department;
 insert into department (dept_name,dept_head) values ("HR","Santosh");
 
 
+-- 9th feb 2026 --
+
+use join_fk_db;
+
+show tables;
+
+
+desc department;
+desc employee;
+
+
+select * from department;
+
+
+insert into department(dept_name,dept_head) values ("Sales","Ajay");
+insert into department(dept_name,dept_head) values ("IT","Diya"),
+("Account","Fathima"),
+("Admin","Archana");
+
+
+select * from department;
+
+
+
+insert into employee values 
+("EMP001","AKSHATHA",65000,1),
+("EMP002","BANU",35000,1),
+("EMP003","JHON",45000,1),
+("EMP004","TARUN",65000,NULL),
+("EMP005","DIVYA",58000,2),
+("EMP006","NAVANITH",95000,2),
+("EMP007","SHRAVYA",85000,3),
+("EMP008","RANI",75000,NULL),
+("EMP009","GAGAN",42000,3),
+("EMP010","RAJ",15000,NULL);
+
+SELECT * FROM EMPLOYEE;
+
+insert into employee values 
+("EMP011","CHARAN",65000,9); -- THIS WILL THORW AN ERROR CAUSE DEPT ID 9 DOES NOT EXIST --
+
+
+start transaction ;
+
+delete from department where dept_id = 3; -- this will throw error cause it is connected with employee table so it will not delete
+
+rollback;
+
+
+
+-- find the dept head of the akshatha --
+
+
+select dept_head from department where dept_id = (
+select dept_id from employee where emp_name = "AKSHATHA");
+
+
+-- METHOD 2 using joins 
+
+select d.dept_head 
+from department as d 
+inner join 
+employee as e 
+on d.dept_id = e.dept_id
+where e.emp_name = "AKSHATHA";
+
+
+
+-- FIND THE DETAILS OF EMPLPOYEE WHERE DEPARTMENT IS IT
+
+select * from employee as e 
+inner join 
+department as d 
+on e.dept_id = d.dept_id 
+where d.dept_name = "IT";
+
+
+
+-- display all the employees along with thier dept_name -- 
+
+SELECT e.emp_name,d.dept_name,d.dept_head FROM employee as e 
+left join department as d 
+on e.dept_id = d.dept_id;
+
+
+-- display all department along with their employee name --
+SELECT d.dept_name,e.emp_name FROM employee as e 
+right join department as d 
+on e.dept_id = d.dept_id;
+
+
+
+-- find the numbers of employee in each department -- 
+
+
+SELECT 
+    d.dept_name,
+    COUNT(e.emp_id) AS employee_count
+FROM department d
+JOIN employee e 
+    ON e.dept_id = d.dept_id
+GROUP BY d.dept_name;
