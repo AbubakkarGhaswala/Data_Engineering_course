@@ -540,3 +540,67 @@ FROM department d
 JOIN employee e 
     ON e.dept_id = d.dept_id
 GROUP BY d.dept_name;
+
+
+-- 10th Feb 2026 --
+
+use join_fk_db;
+
+
+-- cross joins
+select * from employee as  e
+inner join department as d;
+
+
+-- union 
+
+(select * from employee as e 
+left join department as d 
+on e.dept_id = d.dept_id)
+union 
+(select * from employee as e 
+right join department as d 
+on e.dept_id = d.dept_id);
+
+
+
+
+-- 7 show employee salary along with the avg salary --
+
+select * from employee 
+where emp_salary > (select avg(emp_salary) from employee);
+
+
+
+-- 8 find avg salary in each dept --
+
+select avg(emp_salary),dept_id from employee 
+group by dept_id;
+
+select * from 
+(select 
+emp_name,
+emp_salary,
+dept_id,
+avg(emp_salary) over (partition by dept_id) as avg_dept 
+from employee) as sub_table
+where emp_salary > avg_dept;
+
+
+-- find the details of emp who is getting max salary in each dept -- -- here we have used partition by nsted of group by --
+
+select * from (
+select emp_name,
+emp_salary,dept_id,
+rank() over (partition by dept_id order by emp_salary DESC) as rank_dept
+from employee) as maxx_table
+where rank_dept = 1;
+
+
+
+-- find the running slaary each dept --
+select *,sum(emp_salary) over(partition by dept_id order by emp_id) as running_salary 
+from employee;
+
+
+
