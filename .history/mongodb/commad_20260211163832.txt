@@ -1,0 +1,106 @@
+> Commad:- 
+
+show databases;
+
+> Output:- 
+
+admin           40.00 KiB
+car_dealership  80.00 KiB
+config          48.00 KiB
+local           76.00 KiB
+
+
+
+> Command :- 
+
+
+use online_shop_db;(This command will see if database (online_shop_db) exist it will select that or else if not exist it will create and then select)
+
+>Output:- 
+
+
+switched to db online_shop_db
+
+db.createCollection("Orders");
+{ ok: 1 }
+
+
+
+> Commad :- 
+db.Orders.insertOne({order_name:"Grocery",place:"Banglore"}) -- (This command insertOne will insert one data in Orders collections and make sure it will write in {} bracket.)
+
+
+
+
+> Output
+
+
+{
+  acknowledged: true,
+  insertedId: ObjectId('698c36f621b691fff3dd98f6')
+}
+
+
+
+>Commad :- 
+db.Orders.findOne() -- (This Command findOne() will display the first data which he will retrive from our collection.)
+
+
+
+
+
+>Output :- 
+{
+  _id: ObjectId('698c36f621b691fff3dd98f6'),
+  order_name: 'Grocery',
+  place: 'Banglore'
+}
+db.Orders.insertMany({order_name:"Electronics Gadget",status:"Placed"},{order_name:"Baby Product",price:100});
+MongoInvalidArgumentError: Argument "docs" must be an array of documents
+db.Orders.insertMany({order_name:"Electronic Gadget",status:"Placed"},{order_name:"Baby Product",price:1000});
+MongoInvalidArgumentError: Argument "docs" must be an array of documents
+db.Orders.insertMany([{order_name:"Electronic Gadget",status:"Placed"},{order_name:"Baby Product",price:1000}]);
+
+
+db.Orders.find();
+{
+  _id: ObjectId('698c36f621b691fff3dd98f6'),
+  order_name: 'Grocery',
+  place: 'Banglore'
+}
+{
+  _id: ObjectId('698c395c21b691fff3dd98f7'),
+  order_name: 'Electronic Gadget',
+  status: 'Placed'
+}
+{
+  _id: ObjectId('698c395c21b691fff3dd98f8'),
+  order_name: 'Baby Product',
+  price: 1000
+}
+db.Orders.find({order_name:"Baby Product"});
+{
+  _id: ObjectId('698c395c21b691fff3dd98f8'),
+  order_name: 'Baby Product',
+  price: 1000
+}
+db.ord.insertOne({order_name:"Fashion",city:"Chennai"});
+{
+  acknowledged: true,
+  insertedId: ObjectId('698c3b1221b691fff3dd98f9')
+}
+show collections
+ord
+Orders
+db.ord.find();
+{
+  _id: ObjectId('698c3b1221b691fff3dd98f9'),
+  order_name: 'Fashion',
+  city: 'Chennai'
+}
+db.ord.drop();
+true
+// check wheteher ord collection is deleted?
+show collections
+Orders
+db.dropDatabase()

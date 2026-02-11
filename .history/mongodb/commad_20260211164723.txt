@@ -1,0 +1,138 @@
+> Command:- 
+
+show databases;
+
+> Output:- 
+
+admin           40.00 KiB
+car_dealership  80.00 KiB
+config          48.00 KiB
+local           76.00 KiB
+
+
+
+> Command :- 
+
+
+use online_shop_db;(This command will see if database (online_shop_db) exist it will select that or else if not exist it will create and then select)
+
+>Output:- 
+
+
+switched to db online_shop_db
+
+db.createCollection("Orders");
+{ ok: 1 }
+
+
+
+> Command :- 
+db.Orders.insertOne({order_name:"Grocery",place:"Banglore"}) -- (This command insertOne will insert one data in Orders collections and make sure it will write in {} bracket.)
+
+
+
+
+> Output
+
+
+{
+  acknowledged: true,
+  insertedId: ObjectId('698c36f621b691fff3dd98f6')
+}
+
+
+
+>Command :- 
+db.Orders.findOne() -- (This Command findOne() will display the first data which he will retrive from our collection.)
+
+
+
+
+
+>Output :- 
+{
+  _id: ObjectId('698c36f621b691fff3dd98f6'),
+  order_name: 'Grocery',
+  place: 'Banglore'
+}
+
+
+
+
+> Command 
+db.Orders.insertMany([{order_name:"Electronic Gadget",status:"Placed"},{order_name:"Baby Product",price:1000}]);  -- (This command insertMany([]) will add multiple data into our collection but make sure it will be like 
+([{},{}]) in this format)
+
+
+
+> Command :- 
+
+db.Orders.find(); -- (This Command find() will display all data from our collection)
+
+
+
+>Output :- 
+{
+  _id: ObjectId('698c36f621b691fff3dd98f6'),
+  order_name: 'Grocery',
+  place: 'Banglore'
+}
+{
+  _id: ObjectId('698c395c21b691fff3dd98f7'),
+  order_name: 'Electronic Gadget',
+  status: 'Placed'
+}
+{
+  _id: ObjectId('698c395c21b691fff3dd98f8'),
+  order_name: 'Baby Product',
+  price: 1000
+}
+
+
+
+>Command :- 
+
+db.Orders.find({order_name:"Baby Product"}); -- (This Command Is To Find With Filter like display only that data which order_name is Baby Product .)
+
+> Output :- 
+
+
+{
+  _id: ObjectId('698c395c21b691fff3dd98f8'),
+  order_name: 'Baby Product',
+  price: 1000
+}
+
+
+
+
+> Command :- 
+db.ord.insertOne({order_name:"Fashion",city:"Chennai"}); -- (Here The Twist is we have collection orders ryt but by mistake i have wrote ord only so it will not throw error it will 
+create a new collection and add this data .)
+
+>Output :- 
+
+
+{
+  acknowledged: true,
+  insertedId: ObjectId('698c3b1221b691fff3dd98f9')
+}
+
+
+>Command :- 
+
+show collections --- (This command will display how many collections we have )
+ord
+Orders
+db.ord.find();
+{
+  _id: ObjectId('698c3b1221b691fff3dd98f9'),
+  order_name: 'Fashion',
+  city: 'Chennai'
+}
+db.ord.drop();
+true
+// check wheteher ord collection is deleted?
+show collections
+Orders
+db.dropDatabase()
