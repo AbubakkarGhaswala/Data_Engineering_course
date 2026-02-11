@@ -603,4 +603,9 @@ select *,sum(emp_salary) over(partition by dept_id order by emp_id) as running_s
 from employee;
 
 
+create database e_commerce_db;
 
+use e_commerce_db;
+
+
+show tables;
