@@ -287,28 +287,3 @@ db.Sales.aggregate([
   total_quantity: 20
 }
 
-{
-  _id: 'Notebook',
-  total_quantity: 20
-}
-
-## same for avg and count not much different 
-
-
-
-> COmmand :-
-
-
-db.Sales.find().limit(1);  -- here we have use limit function here it will display only 1 data 
-
-
-
-now if i want to display 2nd one not 1st one then ?  so we have command for this also 
-
-
-> Command :- 
-
-db.Sales.find().skip(1).limit(1);  -- this skip function will 1st data and show 2nd one if i write skip(3) then this will skip first 3 data and show 4rth one ..
-
-
-
