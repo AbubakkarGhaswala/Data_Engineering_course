@@ -1,0 +1,7 @@
+------- Hello Everyone --------
+
+
+// first of all after install git and github on your system in a project directory we have to initialize the git in out project 
+
+> Command :--
+
