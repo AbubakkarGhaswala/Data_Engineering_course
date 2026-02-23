@@ -1,0 +1,5 @@
+docker is a famous containaerization tool 
+
+basically one container have 3 layers one is RAM, seond is Operating system and then virtual machine layes 
+
+we can run docker ps this will show you how many containers 
