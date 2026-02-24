@@ -1,0 +1,35 @@
+Hello Everyone !
+Today we will learn what is docker and how to use it 
+so docker is a containariazation application where we can run our code.
+so first we have to create a Dockerfile in our current folder so a file name should be same Dockerfile
+inside the docker file we have to write some commands which will same for each and ebery projects the commands are :- 
+
+# Get Python from offical Python image
+FROM python:3.10-slim  -- this is the first command FROM then if we have a project based on python so we can import python it is one type of import or install command 
+
+# folder inside docker container
+WORKDIR /app  -- this is the command to show the working directory which docker will store
+
+COPY requirements.txt .  -- then we have requirements.txt file inside the file we have write our requirements pkg like pandas numpy matplot etcc it will copy content.
+
+RUN pip install --no-cache-dir -r requirements.txt  -- then we have this RUN command it will install all requirements which we have write and copy it above
+
+# if we want to run the code we need to have that code so we are copying that 
+COPY app.py .  -- then we are coping all code from app.py we can add multiple files or a whole folder also
+
+EXPOSE 5000  -- 
+
+# we need to run this code which we have copied 
+CMD ["python", "app.py"]
+
+
+
+after run that we have to convert a Dockerfile to Dockerimage 
+so for build the 
+docker build -t python_even_odd:V.1 .
+
+
+
+
+
+docker images ## to see the all images we have created 

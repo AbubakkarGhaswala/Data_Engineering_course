@@ -1,0 +1,1 @@
+docker build -t python_even_odd:V.1
