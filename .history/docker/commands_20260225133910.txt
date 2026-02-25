@@ -98,6 +98,4 @@ docker stop 4e376d2c556e  -- this command will stop running container
 
 now we will doo port mapping lets see 
 
- docker run -d -p 8000:5000  3262c6675a45 -- so here io run command after -d i have write -p 8000:5000 so here -p for port then 8000:5000
- so 8000 is a server port from where user come okay but user does not know internally we are moviing our all request to port 5000 cause in our code file and 
- Dockerfile we wrote that Expose 5000 so 8000:5000 this meams getting request from 8000 and moving to 5000 and comback 
+ docker run -d -p 8000:5000  3262c6675a45 so here 

@@ -71,33 +71,4 @@ Press CTRL+C to quit
 
 
 
-this command is working in attach mode like show the servers and all so if we don't want to see  the output and just work so we will write 
-
-
-docker run -d 3262c6675a45  -- here highfun d (-d) is use for detach mmode in this when we will run this it will not show any server details 
-
-4e376d2c556e1a2318a9a11a37706bbb81eccbd7dc34a4be0b7a3e1b8d9ec13a
-
-and if we want to see the server details so 
-
-
-docker logs 4e376d2c556e -- this command will show the server details but make sure after log 4e376d2c556e this is a containerid 
-
- * Serving Flask app 'app'
- * Debug mode: off
-WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
- * Running on all addresses (0.0.0.0)
- * Running on http://127.0.0.1:5000
- * Running on http://172.17.0.2:5000
-Press CTRL+C to quit
-
-
-
-docker stop 4e376d2c556e  -- this command will stop running container
-
-
-now we will doo port mapping lets see 
-
- docker run -d -p 8000:5000  3262c6675a45 -- so here io run command after -d i have write -p 8000:5000 so here -p for port then 8000:5000
- so 8000 is a server port from where user come okay but user does not know internally we are moviing our all request to port 5000 cause in our code file and 
- Dockerfile we wrote that Expose 5000 so 8000:5000 this meams getting request from 8000 and moving to 5000 and comback 
+this command is working in attach mode like show the servers and all so if we don't want to see 
