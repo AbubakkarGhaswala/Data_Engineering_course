@@ -1,7 +1,0 @@
-docker build -t python_even_odd:V.1 .
-
-
-
-
-
-docker images ## to see the all images we 
