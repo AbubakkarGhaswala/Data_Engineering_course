@@ -1,0 +1,31 @@
+So this is info.txt where i will write all things 
+
+so why we use pyspark so it do same work as pandas but pandas is usefull for small data for big data we need to use pyspark 
+
+so pyspark basically a python library 
+
+
+
+so what are basic steps to import and run is 
+
+
+# this command will import pyspark - pyspark is use for big data and pandas use for small data
+import pyspark
+
+# for use pyspark we have to create a spark session so below is the command
+from pyspark.sql import SparkSession
+
+# for do further process we have to build a app so below is the command
+spark=SparkSession.builder.appName("Demo").getOrCreate()
+
+# this command will going to import csv 
+df_pyspark = spark.read.csv('test1.csv',header=True,inferSchema=True)
+
+okay here in import command if we just write 
+df_pyspark = spark.read.csv('test1.csv') this then it will import but the column names will not show so for that we need to write 
+header=True and 
+
+# this command is use to display the data in csv
+df_pyspark.show()
+
+

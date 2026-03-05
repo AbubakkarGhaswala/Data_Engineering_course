@@ -125,5 +125,3 @@ pred_results=regressor.evaluate(test_data)
 
 
 
-### PErformance Metrics
-pred_results.r2,pred_results.meanAbsoluteError,pred_results.meanSquaredError

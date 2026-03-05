@@ -111,19 +111,10 @@ output=featureassembler.transform(df)
 
 
 
-# here we will use train test module of LinearRegression so what simply it is that for ex we have 100 data so we will do 75 for train our machine and 25 for testing 
+# here we will use train test module of LinearRegression so 
 
 from pyspark.ml.regression import LinearRegression
 ##train test split
 train_data,test_data=finalized_data.randomSplit([0.75,0.25])
 regressor=LinearRegression(featuresCol='Independent Features', labelCol='total_bill')
 regressor=regressor.fit(train_data)
-
-
-### Predictions
-pred_results=regressor.evaluate(test_data)
-
-
-
-### PErformance Metrics
-pred_results.r2,pred_results.meanAbsoluteError,pred_results.meanSquaredError

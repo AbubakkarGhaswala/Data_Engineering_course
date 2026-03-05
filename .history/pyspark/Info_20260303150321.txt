@@ -1,0 +1,70 @@
+So this is info.txt where i will write all things 
+
+so why we use pyspark so it do same work as pandas but pandas is usefull for small data for big data we need to use pyspark 
+
+so pyspark basically a python library 
+
+
+
+so what are basic steps to import and run is 
+
+
+# this command will import pyspark - pyspark is use for big data and pandas use for small data
+import pyspark
+
+# for use pyspark we have to create a spark session so below is the command
+from pyspark.sql import SparkSession
+
+# for do further process we have to build a app so below is the command
+spark=SparkSession.builder.appName("Demo").getOrCreate()
+
+# this command will going to import csv 
+df_pyspark = spark.read.csv('test1.csv',header=True,inferSchema=True)
+
+okay here in import command if we just write 
+df_pyspark = spark.read.csv('test1.csv') this then it will import but the column names will not show so for that we need to write 
+header=True and by default each datatype of column will be string format so if we want original datatype then we have to wirte 
+inferSchema=True this command will do .
+
+
+# this command is use to display the data in csv
+df_pyspark.show()
+
+
+# this command will show the schema of the data which is inside the csv
+df_pyspark.printSchema()
+
+
+
+# Selecting single column
+
+df_pyspark.select("Name").show()
+
+
+
+# Selecting multiple column
+
+df_pyspark.select(['Name','age']).show()
+
+
+
+
+# Adding column in Dataframe
+
+df_pyspark=df_pyspark.withColumn('Experience After 2 Years',df_pyspark['Experience']+2)
+
+
+
+# Dropping column
+
+df_pyspark=df_pyspark.drop('Experience After 2 Years')
+
+
+
+
+# For Rename The Columns
+df_pyspark = df_pyspark.withColumnRenamed('Name','New_Name').show()
+
+
+
+okay here if we want to yk 
