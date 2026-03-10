@@ -159,14 +159,3 @@ have to write
 # this command will import pyspark - pyspark is use for big data and pandas use for small data
 import pyspark
 
-from pyspark.sql import SparkSession
-
-spark=SparkSession.builder.appName("Demo").getOrCreate()
-
-right import then select type then create SparkSession etcc in databricks just open file or notebook there and simply write coding from df = spark.read.csv 
-
-no need to import or declare a type of spark or build a SparkSession etc .
-
-
-
-RDD does not support in Databricks cause Databricks is serverless so we will use it in google collab 

@@ -139,34 +139,4 @@ So RDD is RDD - Resilient Distributed Dataset
 
 it is a Datastructure in spark
 
-RDD is Distributed collection of data that spark process in parallel.
-
-in RDD we have one command which we will convert List into RDD
-
-Parallelize() --> converts list into RDD
-
-
-RDD is immutable - means once we assign we cant chnage like cant do any operation like append update etc 
-
-
-
-Till Last Lect i have used google collab as my editior but from this we will use Databricks Free Edition 
-
-So Databricks is simply a coding platform where everysteup is already setup we just have to go and write the code like usally while using spark we 
-have to write 
-
-
-# this command will import pyspark - pyspark is use for big data and pandas use for small data
-import pyspark
-
-from pyspark.sql import SparkSession
-
-spark=SparkSession.builder.appName("Demo").getOrCreate()
-
-right import then select type then create SparkSession etcc in databricks just open file or notebook there and simply write coding from df = spark.read.csv 
-
-no need to import or declare a type of spark or build a SparkSession etc .
-
-
-
-RDD does not support in Databricks cause Databricks is serverless so we will use it in google collab 
+RDD is Distributed collection of data that spark process in pa

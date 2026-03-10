@@ -169,4 +169,4 @@ no need to import or declare a type of spark or build a SparkSession etc .
 
 
 
-RDD does not support in Databricks cause Databricks is serverless so we will use it in google collab 
+RDD does not support in Databricks cause Databricks is serverless 
