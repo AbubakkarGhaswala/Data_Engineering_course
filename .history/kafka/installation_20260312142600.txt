@@ -1,0 +1,5 @@
+For install the kafka first let setup everything for kafka we need java runtime environment so install that 
+
+
+
+ADi8TuHbTo-4KbauT3_wFg

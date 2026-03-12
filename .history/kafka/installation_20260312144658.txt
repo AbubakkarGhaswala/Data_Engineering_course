@@ -1,0 +1,50 @@
+For install the kafka first let setup everything for kafka we need java runtime environment so install that 
+then i will give one kafka folder open that folder in terminal and run 
+
+bin/kafka-storage.sh random-uuid
+
+this command if i will get permission denied or something so run 
+
+chmod +x bin/Kafka-storage.sh this and 
+chmod +x bin/*.sh
+this command and then run 
+
+bin/kafka-storage.sh random-uuid
+ this command again so we will get one cluster id 
+
+ADi8TuHbTo-4KbauT3_wFg
+
+
+
+
+
+curl -o kafka_2.13-4.0.0.tgz https://dlcdn.apache.org/kafka/4.0.0/kafka_2.13-4.0.0.tgz
+extraction>>tar -xzf kafka_2.13-3.8.0.tgz
+
+bin\windows\kafka-storage.bat random-uuid    (for mac bin\kafka-storage.sh random-uuid)
+
+set KAFKA_CLUSTER_ID=9e2a22c9-4c5d-4f1b-a6a3-2bb5f3b1d123
+BmUMStDcT9ihygAtG-A01A
+
+
+
+
+bin/kafka-storage.sh format -t ADi8TuHbTo-4KbauT3_wFg -c config\kraft\server.properties
+
+=-----------------
+>practice  cmwzd0jxRXayFcgmP10dGg
+bin/kafka-storage.sh format -t ADi8TuHbTo-4KbauT3_wFg -c config\kraft\server.properties  (repeat)
+------------------
+bin\windows\kafka-storage.bat format -t %KAFKA_CLUSTER_ID% -c config\kraft\server.properties (repeatition)
+
+
+
+bin/kafka-server-start.bat config/kraft/server.properties
+
+
+
+bin/kafka-topics.sh --create --topic quickstart-events --bootstrap-server localhost:9092
+
+
+
+bin\windows\kafka-console-producer.bat --topic quickstart-events --bootstrap-server localhost:9092

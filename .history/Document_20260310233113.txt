@@ -1,0 +1,5 @@
+Hello Everyone On this branch we will learn big data foundation which will cover pyspark and so many things 
+
+
+
+hello gemini I am abu i am pursuing data engineering course as you know so rn I have completed python fundamentals then statistics then git GitHub then I have learn mongodb and mysql then pandas and numpy and docker and now I have learn pyspark and Databricks okay 

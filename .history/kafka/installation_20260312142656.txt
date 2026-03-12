@@ -1,0 +1,11 @@
+For install the kafka first let setup everything for kafka we need java runtime environment so install that 
+then i will give one kafka folder open that folder in terminal and run 
+
+bin/kafka-storage.sh random-uuid
+
+this command if i will get permission denied or something so run 
+
+
+
+
+ADi8TuHbTo-4KbauT3_wFg
