@@ -1,0 +1,11 @@
+EC2 stands for Elastic Compute Cloud 
+
+In EC2 we can create manage and moniter our virtual servers Like for example we are using Windows OS right 
+and if we want to use MAC OS or Linux OS for our some work so 
+
+Instead of buying a new laptop we can simply create a Virtual Machine 
+On AWS EC2 at a minimal cost and when our work done we can siomply erase it off the server so we dont get more charge
+
+in EC2 there is a 2 type of Instance t2.micro and t3.micro which is a free. at time of creating instance we get a one .pem file which we have to install 
+
+if we loose that file then you will lose the 

@@ -1,0 +1,8 @@
+Athena is a serverless interactive query editior where we can analyze the data directly in Amazon S3 
+
+here we dont need to manage any infrastructure we just have to pay for the query we run 
+
+it also intreget with our AWS glue so the database we have created inside AWS glue that appear here and by select that database 
+we can run any query without worries.
+
+Athena uses standard SQL. Anyone who knows SQL can use Athena without learning anything new. That's one of its biggest advantages.

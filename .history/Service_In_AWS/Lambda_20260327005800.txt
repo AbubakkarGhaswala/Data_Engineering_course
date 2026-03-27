@@ -1,0 +1,11 @@
+Lambda is another great thing in AWS. so basically lambda do that it is a serverless commputing which help 
+
+you to run your code without managing a server or you dont need to worry to install anything we can write our code and lambda will 
+
+do all other formalities and we will get our output and one thing which is make it very helpfull that for ex If a new student CSV file is uploaded to S3, 
+Lambda can automatically trigger and run a cleaning script without me manually doing anything. No file upload, no Lambda run.
+Lambda bills you per number of requests and execution time, not server time. EC2 bills by the hour even when idle. Lambda costs nothing when not running.
+
+It is event driven. Lambda runs only when triggered by an event. For example file uploaded to S3 → Lambda automatically triggers and runs your code. 
+No trigger, no run. This is what makes it different from EC2 where the server runs all the time.
+

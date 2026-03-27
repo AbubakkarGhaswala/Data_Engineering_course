@@ -1,0 +1,19 @@
+IAM stand for Identity And Access Management.
+
+In IAM I have only used two thing one is assign limited access to user or create a user in IAM 
+
+if we create a user and assign only one access of S3 (We'll discuss what is this) 
+
+let's say we have created a user name - Jhon and create a password - TEST@123 okay and in access we gave policy we attach S3 full access so when we gave the username and password and our
+
+account id so when user enter our root acc id and his username and password so he will login into our account but if he can't open anything except S3 without S3 every where he will get 
+
+access denied when he will open S3 he can work on that
+
+in IAM there is one more thing called Role previous we have discuss about user 
+
+so role is a service which is temporary . example we have create one role for a project of pipeline okay in role we gave it access of S3 and 
+AWS Glue so this role will have an access of AWS Glue and S3 for limited time period 
+
+A role is not recreated for each project. You create a role once and reuse it across multiple jobs or projects that need the same permissions. You don't create a new role every time.
+Also add one more important point — why Role and not User for Glue? Because Glue is a service, not a human. Services cannot have usernames and passwords. So AWS gives them temporary credentials through a Role every time they run a job.

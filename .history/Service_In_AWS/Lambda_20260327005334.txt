@@ -1,0 +1,11 @@
+Lambda is another great thing in AWS. so basically lambda do that it is a serverless commputing which help 
+
+you to run your code without managing a server or you dont need to worry to install anything we can write our code and lambda will 
+
+do all other formalities and we will get our output and one thing which is make it very helpfull that for ex if you build your application 
+
+on your laptop and let's say at one situation you dont have access of your laptop so you can't do your work . so if we have build on AWS Lambda 
+
+so if can't use our laptop so we can sign in our AWS in our friends laptop and do our work and save it so this is very helpfull thing . 
+
+and best thing is it will billed you till the time ther server you will use.

@@ -1,0 +1,9 @@
+
+
+S3 is a storage section is AWS in S3 we have to create a bucket and after creating a bucket we can upload our any files or folders or anything that will store in our S3 .
+
+. in S3 we can do a pipeline task which usally data engineers do Like we can create a 2 bucket in one bucket we will add 
+
+a RAW file and after do the ETL Pipeline work so as a Load part we can point it to the second bucket which is empty so after ETL run succeesfully then in second bucket we 
+
+can see the new file so in basic terms we can say that this is a person in AWS who keep our data inside a bucket

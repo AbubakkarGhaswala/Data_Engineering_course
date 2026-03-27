@@ -1,0 +1,14 @@
+Dynamo DB is a Nosql Database which run on cloud and 
+
+Daynamo DB is very easy to use what we have to do open Dynamo DB and there is an option of create a table we just have to click on that and give name to table and 
+
+hit create a table and in table we got on option of actions in action we have to write create item so in create item we got option of add attributes(column) 
+
+so we have to put values in that and create then we can enter the data into the table
+
+and we can create a backup so in that we can take backup of the table which is important and in this we have option to export S3 and import S3 so we can import the data
+
+from S3 and push in table and we can export data from table and push on S3 bucket
+
+Why NoSQL — DynamoDB stores data as key-value pairs, not rows and columns like MySQL. So there is no fixed schema. Each item can have different attributes.
+When to use DynamoDB vs MySQL — DynamoDB is for high speed lookups on large scale data. MySQL is for structured relational data with joins and complex queries.
