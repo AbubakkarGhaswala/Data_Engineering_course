@@ -127,10 +127,3 @@ RUN :- Executes commands during the build process of the image. It is used to in
 
 
 COPY :- Copies files or directories from your host machine (your local computer) into the Docker image itself.
-    EX :- COPY . /app (This takes everything in your current local folder and puts it in the /app folder inside the container).
-
-
-CMD :- Specifies the default command that runs only when the container starts up. If the user specifies a command when running the container, CMD is ignored.
-        A Dockerfile can only have one CMD. If you put more than one, only the last one counts.
-
-    EX:- CMD ["python", "app.py"]

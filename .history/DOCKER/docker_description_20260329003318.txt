@@ -4,7 +4,9 @@ What is Container ?
     it is very portable and it can share with anyone and anyone can easily use it. 
     it make development and deployment more efficient
 
-
+Where Does Container Lives ?
+    So all containers are live in DockerHub on DockerHub there more than 100000+ Container images are there.
+    We can search it and install and use it.
 
 Why Docker Container Is Usefull ?
     so let's see the one view 
@@ -49,7 +51,7 @@ Basic Docker Commands :-
 
 
 
-    docker exec -it :- this is a very usefull command for debugging we can see logs or pwd and everything. here -it stands for interactive terminal
+    docker exec-it :- this is a very usefull command for debugging we can see logs or pwd and everything. here -it stands for interactive terminal
      but we cant use it standalone we have to give atleast 2 argumment like /bin/bash we went into that folder and we can see ls or logs or 
      print env etc. 
 
@@ -63,74 +65,4 @@ Basic Docker Commands :-
     docker run -d -p[assign port if needed] --name [name] imagename
 
 
-    docker rm [container_id] :- this command will gonna delete containers
-
-    docker rmi [image_id / image_name] :- this command will gonna delete images
-
-to find the port number of an images if we dont know then use 
-
-docker history <image_name_or_id> :  shows image build layers, 
-
-
-
-
-now we are going to see another crucial concept that is docker network so basically in docker network we can add 2 container and they can talk to each other 
-
-docker network ls :- to see all network 
-
-docker network create [network name] :- it will create a network 
-
-
-then at the time of running image we have to give like :- 
-
-docker run --net [network name which we have created] --name like thiss .
-
-and we have to run both container which we want to run should be on same network.
-
-
-
-for build our own image we have to create a Dockerfile and it names same as Dockerfile 
-
-inside Dockerfile it have a syntax and a way to write is 
-
-FROM 
-
-ENV
-
-RUN 
-
-COPY 
-
-CMD
-
-
-now move to terminal and 
-
-
-docker build -t [name_of_image]:[version if we want to give] .
-
-
-here this "." means build image in this current directory 
-
-FROM :- we are using from for built our image base on some other image , Every valid Dockerfile must start with FROM 
-        (except in very rare cases where you start from scratch).
-
-ENV :- Sets environment variables that persist both during the build and when the container is running.
-    EX:- ENV PORT=8080
-
-
-RUN :- Executes commands during the build process of the image. It is used to install packages, create folders, or set up the environment. 
-        Each RUN instruction creates a new layer in the image.
-
-        In this we can do like in reqiurements.txt inside we can write command for insatll pandas and numpy and then 
-        RUN pip install -r requirements.txt   so it will install
-
-
-COPY :- Copies files or directories from your host machine (your local computer) into the Docker image itself.
-    EX :- COPY . /app (This takes everything in your current local folder and puts it in the /app folder inside the container).
-
-
-CMD :- Specifies the default command that runs only when the container starts up. If the user specifies a command when running the container, CMD is ignored.
-        A Dockerfile can only have one CMD. If you put more than one, only the last one counts.
-
-    EX:- CMD ["python", "app.py"]
+    docker rm [container_id] :- this command will gonna delete 

@@ -1,0 +1,2 @@
+docker pull imagename:version if exist
+docker pull postgres:14.22-trixie

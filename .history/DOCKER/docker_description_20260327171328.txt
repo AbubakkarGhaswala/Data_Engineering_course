@@ -1,0 +1,12 @@
+What is Container ? 
+    So the container is a packege where it store the applications as well as it's dependencies 
+    and configuration.
+    it is very portable and it can share with anyone and anyone can easily use it. 
+    it make development and deployment more efficient
+
+Where Does Container Lives ?
+    So all containers are live in DockerHub on DockerHub there more than 100000+ Container images are there.
+    We can search it and install and use it.
+
+Why Docker Container Is Usefull ?
+    so 

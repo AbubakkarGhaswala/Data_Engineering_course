@@ -1,0 +1,4 @@
+What is Container ? 
+    So the container is a packege where it store the applications as well as it's dependencies 
+    and configuration.
+    

@@ -1,0 +1,35 @@
+What is Container ? 
+    So the container is a packege where it store the applications as well as it's dependencies 
+    and configuration.
+    it is very portable and it can share with anyone and anyone can easily use it. 
+    it make development and deployment more efficient
+
+Where Does Container Lives ?
+    So all containers are live in DockerHub on DockerHub there more than 100000+ Container images are there.
+    We can search it and install and use it.
+
+Why Docker Container Is Usefull ?
+    so let's see the one view 
+        Before Container :- 
+            we have a team of developer and we are working on same project which include 10 dependencies like js,mongodb,nodejs etc right and 
+            a new developer joins in our team so first he need to install all 10 dependencies in his OS manually and doing it manually is very 
+            complex and it have a heavy risk of errors 
+        After Container :- 
+            so now the same example a new developer just need to install a container and run it and boom ! he got everything and dont need to worry 
+            about dependencies and code everything he will gonna get.
+
+What is Docker Image ?
+    So The Image is a actual packege 
+    inside the docker image there is an applications layer called container where all code files or dependencies are there 
+    so the meaning of it is portable that we install a docker image and when we run that docker image then it run and create a 
+    container environment.
+
+
+Basic Docker Commands :- 
+    docker pull :- 
+    docker run  :-
+    docker start :- 
+    docker stop :- 
+    docker ps  :- It will list out all running containers
+    docker exec-it :- 
+    docker logs :- 

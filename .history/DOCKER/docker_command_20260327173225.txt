@@ -1,0 +1,5 @@
+docker pull imagename:version if exist
+
+let's say i want to install postgressql in my system so first i need to start docker engine then
+open dockerhub and search for the Container 
+docker pull postgres:14.22-trixie
